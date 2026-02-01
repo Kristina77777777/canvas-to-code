@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingCart, Menu, X, Waves } from 'lucide-react';
+import { ShoppingCart, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
+import logo from '@/assets/logo.png';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,11 +40,12 @@ const Navigation: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <Waves className="w-8 h-8 text-primary transition-transform group-hover:scale-110" />
-            <span className="font-display text-xl md:text-2xl font-semibold text-foreground">
-              Мэджик
-            </span>
+          <a href="#" className="flex items-center group">
+            <img 
+              src={logo} 
+              alt="Magic Coffee" 
+              className="h-12 md:h-14 w-auto transition-transform group-hover:scale-105"
+            />
           </a>
 
           {/* Desktop Navigation */}
