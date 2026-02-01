@@ -1,13 +1,23 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
+import Navigation from '@/components/Navigation';
+import Hero from '@/components/Hero';
+import MenuSection from '@/components/MenuSection';
+import ArtSpaceSection from '@/components/ArtSpaceSection';
+import DeliverySection from '@/components/DeliverySection';
+import Footer from '@/components/Footer';
+import CartModal from '@/components/CartModal';
 
-const Index = () => {
+const Index: React.FC = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen">
+      <Navigation />
+      <Hero />
+      <MenuSection />
+      <ArtSpaceSection />
+      <DeliverySection />
+      <Footer />
+      <CartModal />
+    </main>
   );
 };
 
