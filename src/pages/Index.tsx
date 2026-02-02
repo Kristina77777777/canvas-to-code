@@ -20,7 +20,7 @@ import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { cafeInfo } from '@/data/menuData';
-import exteriorSign from '@/assets/exterior-sign.jpg';
+import heroWaffles from '@/assets/hero-waffles.jpg';
 
 // Фотографии интерьера
 import interiorEntrance from '@/assets/interior-entrance.jpg';
@@ -75,11 +75,11 @@ const Index: React.FC = () => {
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            <div className="overflow-hidden rounded-2xl shadow-lg max-w-3xl mx-auto">
+            <div className="overflow-hidden rounded-2xl shadow-xl max-w-2xl mx-auto">
               <img 
-                src={exteriorSign} 
-                alt="Вывеска кофейни"
-                className="w-full h-48 md:h-72 object-cover"
+                src={heroWaffles} 
+                alt="Гонконгские вафли и кофе"
+                className="w-full h-64 md:h-80 object-cover"
               />
             </div>
           </motion.div>
