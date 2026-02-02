@@ -7,6 +7,16 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { cafeInfo } from '@/data/menuData';
 
+// Фотографии интерьера
+import interiorBar from '@/assets/interior-bar.jpg';
+import interiorSeating from '@/assets/interior-seating.jpg';
+import interiorWindow from '@/assets/interior-window.jpg';
+import interiorLounge from '@/assets/interior-lounge.jpg';
+import interiorEntrance from '@/assets/interior-entrance.jpg';
+import interiorMain from '@/assets/interior-main.jpg';
+import interiorPlants from '@/assets/interior-plants.jpg';
+import interiorSofa from '@/assets/interior-sofa.jpg';
+
 const ContactsPage: React.FC = () => {
   const featureIcons: Record<string, React.ReactNode> = {
     'Можно прийти с детьми': <Baby className="w-5 h-5" />,
@@ -82,6 +92,62 @@ const ContactsPage: React.FC = () => {
                 </a>
               </Button>
             </div>
+          </section>
+
+          {/* Photo gallery */}
+          <section className="mb-12">
+            <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
+              Как мы выглядим
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div className="col-span-2 row-span-2">
+                <img 
+                  src={interiorMain} 
+                  alt="Основной зал кофейни" 
+                  className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                />
+              </div>
+              <img 
+                src={interiorBar} 
+                alt="Барная стойка" 
+                className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow aspect-square"
+              />
+              <img 
+                src={interiorSeating} 
+                alt="Зона отдыха" 
+                className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow aspect-square"
+              />
+              <img 
+                src={interiorWindow} 
+                alt="Вид с улицы" 
+                className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow aspect-square"
+              />
+              <img 
+                src={interiorEntrance} 
+                alt="Вход в кофейню" 
+                className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow aspect-square"
+              />
+            </div>
+            <div className="grid grid-cols-3 gap-3 mt-3">
+              <img 
+                src={interiorLounge} 
+                alt="Уютный уголок" 
+                className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              />
+              <img 
+                src={interiorPlants} 
+                alt="Зелёный уголок" 
+                className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              />
+              <img 
+                src={interiorSofa} 
+                alt="Красный диван" 
+                className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              />
+            </div>
+            <p className="font-body text-sm text-muted-foreground mt-3">
+              Фотографии сделаны в нашей кофейне
+            </p>
           </section>
 
           {/* Contact info cards */}
