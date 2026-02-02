@@ -18,9 +18,9 @@ const Navigation: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { href: '/menu', label: 'Меню' },
-    { href: '/events', label: 'Мероприятия' },
     { href: '/contacts', label: 'Контакты' },
+    { href: '/menu', label: 'Меню' },
+    { href: '/events', label: 'События' },
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -43,15 +43,15 @@ const Navigation: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`font-body transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all ${
+                className={`font-body px-4 py-2 rounded-full transition-all duration-200 ${
                   isActive(link.href) 
-                    ? 'text-primary after:w-full' 
-                    : 'text-foreground/80 hover:text-primary after:w-0 hover:after:w-full'
+                    ? 'bg-primary text-primary-foreground shadow-md' 
+                    : 'bg-secondary/60 text-foreground hover:bg-primary/20 hover:text-primary'
                 }`}
               >
                 {link.label}
@@ -74,18 +74,22 @@ const Navigation: React.FC = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden glass rounded-lg mb-4 p-4 animate-fade-in-up">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full text-left py-3 font-body transition-colors border-b border-border last:border-0 ${
-                  isActive(link.href) ? 'text-primary' : 'text-foreground/80 hover:text-primary'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            <div className="flex flex-col gap-2">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block w-full text-center py-3 px-4 rounded-full font-body transition-all ${
+                    isActive(link.href) 
+                      ? 'bg-primary text-primary-foreground shadow-md' 
+                      : 'bg-secondary/60 text-foreground hover:bg-primary/20'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
         )}
       </div>
