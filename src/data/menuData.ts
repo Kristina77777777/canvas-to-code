@@ -1,136 +1,81 @@
 export interface MenuItem {
   id: string;
   name: string;
-  description: string;
-  price: number;
-  category: 'coffee' | 'non-coffee' | 'seasonal' | 'waffles' | 'desserts';
+  description?: string;
+  prices: number[]; // Array for different sizes (small, medium, large)
+  category: 'coffee' | 'tea' | 'author-tea' | 'hot-drinks' | 'cold-drinks' | 'waffles-sweet' | 'waffles-savory';
 }
+
+export interface MenuAddOn {
+  id: string;
+  name: string;
+  price: number;
+}
+
+export const menuAddOns: MenuAddOn[] = [
+  { id: 'espresso-shot', name: 'Эспрессо шот', price: 50 },
+  { id: 'milk', name: 'Молоко / сливки', price: 50 },
+  { id: 'honey', name: 'Мёд', price: 50 },
+  { id: 'marshmallow', name: 'Маршмеллоу', price: 50 },
+  { id: 'decaf', name: 'Без кофеина', price: 50 },
+  { id: 'alt-milk', name: 'Альтернативное молоко', price: 50 },
+  { id: 'lemon', name: 'Лимон', price: 50 },
+  { id: 'topping', name: 'Посыпка', price: 50 },
+];
 
 export const menuItems: MenuItem[] = [
   // Кофе
-  {
-    id: 'espresso',
-    name: 'Эспрессо',
-    description: 'Классический эспрессо',
-    price: 150,
-    category: 'coffee',
-  },
-  {
-    id: 'americano',
-    name: 'Американо',
-    description: 'Эспрессо с горячей водой',
-    price: 180,
-    category: 'coffee',
-  },
-  {
-    id: 'cappuccino',
-    name: 'Капучино',
-    description: 'Эспрессо с молочной пеной',
-    price: 220,
-    category: 'coffee',
-  },
-  {
-    id: 'latte',
-    name: 'Латте',
-    description: 'Эспрессо с большим количеством молока',
-    price: 250,
-    category: 'coffee',
-  },
-  {
-    id: 'flat-white',
-    name: 'Флэт-уайт',
-    description: 'Двойной эспрессо с молоком',
-    price: 270,
-    category: 'coffee',
-  },
-  {
-    id: 'raf',
-    name: 'Раф',
-    description: 'Эспрессо со сливками и ванилью',
-    price: 290,
-    category: 'coffee',
-  },
-  // Напитки без кофе
-  {
-    id: 'cocoa',
-    name: 'Какао',
-    description: 'Горячее какао на молоке',
-    price: 200,
-    category: 'non-coffee',
-  },
-  {
-    id: 'matcha-latte',
-    name: 'Матча-латте',
-    description: 'Японский зелёный чай с молоком',
-    price: 280,
-    category: 'non-coffee',
-  },
-  {
-    id: 'tea',
-    name: 'Чай',
-    description: 'Чёрный, зелёный или травяной',
-    price: 150,
-    category: 'non-coffee',
-  },
-  // Сезонные
-  {
-    id: 'summer-lemonade',
-    name: 'Лимонад',
-    description: 'Освежающий домашний лимонад',
-    price: 220,
-    category: 'seasonal',
-  },
-  {
-    id: 'winter-spice',
-    name: 'Пряный латте',
-    description: 'Латте с корицей и специями',
-    price: 290,
-    category: 'seasonal',
-  },
-  // Гонконгские вафли
-  {
-    id: 'waffle-classic',
-    name: 'Классические вафли',
-    description: 'С сахарной пудрой',
-    price: 250,
-    category: 'waffles',
-  },
-  {
-    id: 'waffle-fruits',
-    name: 'Вафли с фруктами',
-    description: 'С сезонными фруктами и сиропом',
-    price: 350,
-    category: 'waffles',
-  },
-  {
-    id: 'waffle-chocolate',
-    name: 'Вафли с шоколадом',
-    description: 'С горячим шоколадом и бананом',
-    price: 380,
-    category: 'waffles',
-  },
-  {
-    id: 'waffle-ice-cream',
-    name: 'Вафли с мороженым',
-    description: 'С шариком ванильного мороженого',
-    price: 400,
-    category: 'waffles',
-  },
-  // Десерты
-  {
-    id: 'cheesecake',
-    name: 'Чизкейк',
-    description: 'Классический нью-йоркский',
-    price: 280,
-    category: 'desserts',
-  },
-  {
-    id: 'brownie',
-    name: 'Брауни',
-    description: 'Шоколадный брауни с орехами',
-    price: 220,
-    category: 'desserts',
-  },
+  { id: 'cappuccino', name: 'Капучино', prices: [240, 280, 320], category: 'coffee' },
+  { id: 'latte', name: 'Латте', prices: [320, 350], category: 'coffee' },
+  { id: 'espresso', name: 'Эспрессо', prices: [220], category: 'coffee' },
+  { id: 'americano', name: 'Американо', prices: [220, 250], category: 'coffee' },
+  { id: 'raf', name: 'Раф', prices: [280, 320, 350], category: 'coffee' },
+  { id: 'raf-lavender', name: 'Раф лавандовый', prices: [350, 370, 390], category: 'coffee' },
+  { id: 'raf-oreo', name: 'Раф орео / халва', prices: [350, 370, 390], category: 'coffee' },
+  { id: 'flat-white', name: 'Флэт уайт', prices: [320], category: 'coffee' },
+  { id: 'bumble', name: 'Бамбл', prices: [350], category: 'coffee' },
+  { id: 'vienna', name: 'Кофе по-венски', prices: [370, 390], category: 'coffee' },
+  { id: 'mint-mocha', name: 'Мятный мокко', prices: [370, 390], category: 'coffee' },
+  { id: 'caramel-macchiato', name: 'Карамель макиато', prices: [370, 390], category: 'coffee' },
+  
+  // Чай классический
+  { id: 'black-assam', name: 'Чёрный ассам', prices: [200, 350], category: 'tea' },
+  { id: 'black-bergamot', name: 'Чёрный с бергамотом', prices: [200, 350], category: 'tea' },
+  { id: 'black-thyme', name: 'Чёрный с чабрецом', prices: [200, 350], category: 'tea' },
+  { id: 'black-orlov', name: 'Чёрный «Граф Орлов»', prices: [200, 350], category: 'tea' },
+  { id: 'green-gunpowder', name: 'Зелёный порох', prices: [200, 350], category: 'tea' },
+  { id: 'green-jasmine', name: 'Зелёный с жасмином', prices: [200, 350], category: 'tea' },
+  { id: 'milk-oolong', name: 'Молочный улун', prices: [200, 350], category: 'tea' },
+  
+  // Авторский чай
+  { id: 'currant-lingonberry', name: 'Смородиновый с брусничным листом', prices: [260, 390], category: 'author-tea' },
+  { id: 'honey-apple', name: 'Медовое яблоко с имбирём', prices: [260, 390], category: 'author-tea' },
+  { id: 'ginger-lemongrass', name: 'Имбирный лимонник', prices: [260, 390], category: 'author-tea' },
+  { id: 'mint-raspberry', name: 'Мятная малина', prices: [260, 390], category: 'author-tea' },
+  { id: 'passionfruit-cranberry', name: 'Маракуйя клюква', prices: [260, 390], category: 'author-tea' },
+  { id: 'masala', name: 'Масала', prices: [260, 390], category: 'author-tea' },
+  
+  // Горячие напитки
+  { id: 'hot-chocolate', name: 'Горячий шоколад', prices: [380], category: 'hot-drinks' },
+  { id: 'mochaccino', name: 'Моккачино', prices: [380], category: 'hot-drinks' },
+  { id: 'cocoa', name: 'Какао', prices: [380], category: 'hot-drinks' },
+  { id: 'matcha-latte', name: 'Матча латте', prices: [350], category: 'hot-drinks' },
+  { id: 'mulled-wine', name: 'Глинтвейн', prices: [400], category: 'hot-drinks' },
+  
+  // Холодные напитки
+  { id: 'milkshake', name: 'Милк шейк', prices: [350], category: 'cold-drinks' },
+  { id: 'fresh', name: 'Фрэш', description: 'Грейпфрут / Апельсин / Яблоко', prices: [450], category: 'cold-drinks' },
+  { id: 'lemonade', name: 'Лимонад', prices: [300], category: 'cold-drinks' },
+  { id: 'mojito', name: 'Мохито', prices: [300], category: 'cold-drinks' },
+  { id: 'mors', name: 'Морс', prices: [300], category: 'cold-drinks' },
+  
+  // Гонконгские вафли — сладкие
+  { id: 'waffle-ice-cream', name: 'С шариком мороженого', description: '+50₽ доп. шарик', prices: [200], category: 'waffles-sweet' },
+  { id: 'waffle-topping', name: 'С топпингом', prices: [50], category: 'waffles-sweet' },
+  
+  // Гонконгские вафли — сытные
+  { id: 'waffle-ham-cheese', name: 'С ветчиной и сыром', prices: [300], category: 'waffles-savory' },
+  { id: 'waffle-salmon', name: 'С лососем и творожным сыром', prices: [350], category: 'waffles-savory' },
 ];
 
 export interface Event {

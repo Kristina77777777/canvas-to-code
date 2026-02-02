@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Cormorant Garamond"', 'serif'],
-        body: ['"Outfit"', 'sans-serif'],
+        display: ['"Playfair Display"', 'serif'],
+        body: ['"Source Sans 3"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,11 +51,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sand: "hsl(var(--sand))",
-        ocean: "hsl(var(--ocean))",
-        "deep-blue": "hsl(var(--deep-blue))",
+        // Custom vintage coffee colors
+        espresso: "hsl(var(--espresso))",
+        coffee: "hsl(var(--coffee))",
         cream: "hsl(var(--cream))",
-        warm: "hsl(var(--warm))",
+        latte: "hsl(var(--latte))",
+        steam: "hsl(var(--steam))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
