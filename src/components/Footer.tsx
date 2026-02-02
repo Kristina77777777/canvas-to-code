@@ -1,28 +1,67 @@
 import React from 'react';
-import { Waves, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Phone, Mail, MapPin } from 'lucide-react';
+import { cafeInfo } from '@/data/menuData';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="py-8 bg-foreground text-background">
+    <footer className="bg-foreground text-primary-foreground py-12">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <Waves className="w-6 h-6 text-primary" />
-            <span className="font-display text-lg font-semibold">
-              Мэджик Кофейня
-            </span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          {/* Navigation */}
+          <div>
+            <h3 className="font-display text-lg font-semibold mb-4">Навигация</h3>
+            <nav className="space-y-2 font-body text-sm">
+              <Link to="/menu" className="block opacity-80 hover:opacity-100 transition-opacity">
+                Меню
+              </Link>
+              <Link to="/events" className="block opacity-80 hover:opacity-100 transition-opacity">
+                Мероприятия
+              </Link>
+              <Link to="/contacts" className="block opacity-80 hover:opacity-100 transition-opacity">
+                Контакты
+              </Link>
+            </nav>
           </div>
 
-          {/* Copyright */}
-          <p className="font-body text-sm text-center opacity-80">
-            © 2024 Coastal Coffee & Art Space. Все права защищены.
-          </p>
+          {/* Contacts */}
+          <div>
+            <h3 className="font-display text-lg font-semibold mb-4">Контакты</h3>
+            <div className="space-y-3 font-body text-sm">
+              <a 
+                href={`tel:${cafeInfo.phone.replace(/[^\d+]/g, '')}`}
+                className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity"
+              >
+                <Phone className="w-4 h-4" />
+                {cafeInfo.phone}
+              </a>
+              <a 
+                href={`mailto:${cafeInfo.email}`}
+                className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity"
+              >
+                <Mail className="w-4 h-4" />
+                {cafeInfo.email}
+              </a>
+            </div>
+          </div>
 
-          {/* Tagline */}
-          <p className="font-body text-sm flex items-center gap-1 opacity-80">
-            Создано с <Heart className="w-4 h-4 text-primary fill-primary" /> к морю и творчеству
-          </p>
+          {/* Address */}
+          <div>
+            <h3 className="font-display text-lg font-semibold mb-4">Адрес</h3>
+            <div className="font-body text-sm opacity-80">
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5" />
+                <div>
+                  <p>г. {cafeInfo.city}</p>
+                  <p>{cafeInfo.address}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center font-body text-sm opacity-60">
+          <p>© {new Date().getFullYear()} {cafeInfo.name}</p>
         </div>
       </div>
     </footer>

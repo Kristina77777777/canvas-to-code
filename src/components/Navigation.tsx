@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingCart, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useCart } from '@/contexts/CartContext';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '@/assets/logo.png';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { totalItems, setIsCartOpen } = useCart();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,18 +18,12 @@ const Navigation: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { href: '#menu', label: 'Меню' },
-    { href: '#art-space', label: 'Арт-пространство' },
-    { href: '#delivery', label: 'Доставка' },
+    { href: '/menu', label: 'Меню' },
+    { href: '/events', label: 'Мероприятия' },
+    { href: '/contacts', label: 'Контакты' },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMobileMenuOpen(false);
-  };
+  const isActive = (href: string) => location.pathname === href;
 
   return (
     <nav
@@ -40,68 +34,57 @@ const Navigation: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center group">
+          <Link to="/" className="flex items-center group">
             <img 
               src={logo} 
               alt="Magic Coffee" 
-              className="h-12 md:h-14 w-auto transition-transform group-hover:scale-105"
+              className="h-10 md:h-12 w-auto transition-transform group-hover:scale-105"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="font-body text-foreground/80 hover:text-primary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
+                to={link.href}
+                className={`font-body transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all ${
+                  isActive(link.href) 
+                    ? 'text-primary after:w-full' 
+                    : 'text-foreground/80 hover:text-primary after:w-0 hover:after:w-full'
+                }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
           </div>
 
-          {/* Cart & Mobile Menu */}
-          <div className="flex items-center gap-4">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="relative"
-              onClick={() => setIsCartOpen(true)}
-              aria-label="Открыть корзину"
-            >
-              <ShoppingCart className="w-5 h-5" />
-              {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                  {totalItems}
-                </span>
-              )}
-            </Button>
-
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label={isMobileMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
-            >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </Button>
-          </div>
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
+          >
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </Button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden glass rounded-lg mb-4 p-4 animate-fade-in-up">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="block w-full text-left py-3 font-body text-foreground/80 hover:text-primary transition-colors border-b border-border last:border-0"
+                to={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block w-full text-left py-3 font-body transition-colors border-b border-border last:border-0 ${
+                  isActive(link.href) ? 'text-primary' : 'text-foreground/80 hover:text-primary'
+                }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
           </div>
         )}

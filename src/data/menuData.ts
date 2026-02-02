@@ -3,125 +3,246 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number;
-  category: 'coffee' | 'tea' | 'pastry';
-  icon: string;
+  category: 'coffee' | 'non-coffee' | 'seasonal' | 'waffles' | 'desserts';
 }
 
 export const menuItems: MenuItem[] = [
-  // Coffee
+  // Кофе
   {
-    id: 'morning-breeze',
-    name: 'Утренний бриз',
-    description: 'Эспрессо с цитрусовыми нотками и морской солью',
-    price: 340,
+    id: 'espresso',
+    name: 'Эспрессо',
+    description: 'Классический эспрессо',
+    price: 150,
     category: 'coffee',
-    icon: '☕',
   },
   {
-    id: 'warm-wave',
-    name: 'Тёплая волна',
-    description: 'Капучино с ванилью и корицей',
-    price: 320,
-    category: 'coffee',
-    icon: '🌊',
-  },
-  {
-    id: 'depth',
-    name: 'Глубина',
-    description: 'Колд-брю 12-часовой выдержки',
-    price: 280,
-    category: 'coffee',
-    icon: '🫖',
-  },
-  // Tea
-  {
-    id: 'sea-tea',
-    name: 'Морской чай',
-    description: 'Зелёный чай с морскими водорослями и лимоном',
-    price: 220,
-    category: 'tea',
-    icon: '🍵',
-  },
-  {
-    id: 'sunset',
-    name: 'Закат',
-    description: 'Красный чай с мёдом и имбирём',
-    price: 240,
-    category: 'tea',
-    icon: '🌅',
-  },
-  // Pastry
-  {
-    id: 'sand-cookies',
-    name: 'Песочная выпечка',
-    description: 'Печенье с морской солью',
+    id: 'americano',
+    name: 'Американо',
+    description: 'Эспрессо с горячей водой',
     price: 180,
-    category: 'pastry',
-    icon: '🍪',
+    category: 'coffee',
   },
   {
-    id: 'croissant',
-    name: 'Круассан',
-    description: 'Классический круассан со сливочным маслом',
-    price: 160,
-    category: 'pastry',
-    icon: '🥐',
+    id: 'cappuccino',
+    name: 'Капучино',
+    description: 'Эспрессо с молочной пеной',
+    price: 220,
+    category: 'coffee',
   },
+  {
+    id: 'latte',
+    name: 'Латте',
+    description: 'Эспрессо с большим количеством молока',
+    price: 250,
+    category: 'coffee',
+  },
+  {
+    id: 'flat-white',
+    name: 'Флэт-уайт',
+    description: 'Двойной эспрессо с молоком',
+    price: 270,
+    category: 'coffee',
+  },
+  {
+    id: 'raf',
+    name: 'Раф',
+    description: 'Эспрессо со сливками и ванилью',
+    price: 290,
+    category: 'coffee',
+  },
+  // Напитки без кофе
+  {
+    id: 'cocoa',
+    name: 'Какао',
+    description: 'Горячее какао на молоке',
+    price: 200,
+    category: 'non-coffee',
+  },
+  {
+    id: 'matcha-latte',
+    name: 'Матча-латте',
+    description: 'Японский зелёный чай с молоком',
+    price: 280,
+    category: 'non-coffee',
+  },
+  {
+    id: 'tea',
+    name: 'Чай',
+    description: 'Чёрный, зелёный или травяной',
+    price: 150,
+    category: 'non-coffee',
+  },
+  // Сезонные
+  {
+    id: 'summer-lemonade',
+    name: 'Лимонад',
+    description: 'Освежающий домашний лимонад',
+    price: 220,
+    category: 'seasonal',
+  },
+  {
+    id: 'winter-spice',
+    name: 'Пряный латте',
+    description: 'Латте с корицей и специями',
+    price: 290,
+    category: 'seasonal',
+  },
+  // Гонконгские вафли
+  {
+    id: 'waffle-classic',
+    name: 'Классические вафли',
+    description: 'С сахарной пудрой',
+    price: 250,
+    category: 'waffles',
+  },
+  {
+    id: 'waffle-fruits',
+    name: 'Вафли с фруктами',
+    description: 'С сезонными фруктами и сиропом',
+    price: 350,
+    category: 'waffles',
+  },
+  {
+    id: 'waffle-chocolate',
+    name: 'Вафли с шоколадом',
+    description: 'С горячим шоколадом и бананом',
+    price: 380,
+    category: 'waffles',
+  },
+  {
+    id: 'waffle-ice-cream',
+    name: 'Вафли с мороженым',
+    description: 'С шариком ванильного мороженого',
+    price: 400,
+    category: 'waffles',
+  },
+  // Десерты
   {
     id: 'cheesecake',
     name: 'Чизкейк',
-    description: 'Классический чизкейк с ягодами',
-    price: 320,
-    category: 'pastry',
-    icon: '🍰',
+    description: 'Классический нью-йоркский',
+    price: 280,
+    category: 'desserts',
+  },
+  {
+    id: 'brownie',
+    name: 'Брауни',
+    description: 'Шоколадный брауни с орехами',
+    price: 220,
+    category: 'desserts',
   },
 ];
 
-export interface Workshop {
+export interface Event {
   id: string;
-  name: string;
+  title: string;
   date: string;
   time: string;
-  instructor: string;
-  price: number;
-  description: string;
+  format: string;
+  audience: string;
+  needsRegistration: boolean;
+  description?: string;
 }
 
-export const workshops: Workshop[] = [
+export const upcomingEvents: Event[] = [
   {
     id: 'latte-art',
-    name: 'Искусство латте-арта',
-    date: 'Вторник',
+    title: 'Мастер-класс по латте-арту',
+    date: '15 февраля',
+    time: '14:00',
+    format: 'Мастер-класс',
+    audience: 'Для всех',
+    needsRegistration: true,
+    description: 'Научитесь рисовать на кофе. Материалы включены.',
+  },
+  {
+    id: 'book-club',
+    title: 'Книжный клуб',
+    date: '18 февраля',
     time: '18:00',
-    instructor: 'Александр Чеботарев',
-    price: 890,
-    description: 'Научитесь создавать красивые узоры на кофе',
+    format: 'Встреча',
+    audience: 'Любители чтения',
+    needsRegistration: false,
+    description: 'Обсуждаем современную прозу.',
+  },
+  {
+    id: 'wwg',
+    title: 'Что? Где? Когда?',
+    date: '22 февраля',
+    time: '19:00',
+    format: 'Игра',
+    audience: 'Для всех',
+    needsRegistration: true,
+    description: 'Любительская игра без призов. Просто для удовольствия.',
   },
   {
     id: 'watercolor',
-    name: 'Акварель на берегу',
-    date: 'Четверг',
+    title: 'Акварель для начинающих',
+    date: '25 февраля',
     time: '15:00',
-    instructor: 'Мария Волкова',
-    price: 1200,
-    description: 'Рисуем морские пейзажи акварелью',
-  },
-  {
-    id: 'calligraphy',
-    name: 'Каллиграфия & Кофе',
-    date: 'Суббота',
-    time: '11:00',
-    instructor: 'Юлия Петрова',
-    price: 750,
-    description: 'Основы красивого письма за чашкой кофе',
-  },
-  {
-    id: 'photography',
-    name: 'Фотография в кадре',
-    date: 'Суббота',
-    time: '16:00',
-    instructor: 'Иван Морозов',
-    price: 950,
-    description: 'Мобильная фотография для Instagram',
+    format: 'Мастер-класс',
+    audience: 'Для всех',
+    needsRegistration: true,
+    description: 'Рисуем простой пейзаж. Материалы включены.',
   },
 ];
+
+export interface PastEvent {
+  id: string;
+  title: string;
+  date: string;
+  description: string;
+}
+
+export const pastEvents: PastEvent[] = [
+  {
+    id: 'past-1',
+    title: 'Встреча книжного клуба',
+    date: '10 января 2026',
+    description: 'Обсуждали «Дом, в котором…» Мариам Петросян. Было 8 человек.',
+  },
+  {
+    id: 'past-2',
+    title: 'Мастер-класс по каллиграфии',
+    date: '5 января 2026',
+    description: 'Учились писать кистью. 6 участников.',
+  },
+];
+
+export const cafeInfo = {
+  name: 'Magic Coffee',
+  city: 'Анапа',
+  address: 'ул. Горького, 42',
+  district: 'центр города',
+  landmarks: 'напротив кинотеатра «Мир», рядом с остановкой «Центральный рынок»',
+  directions: 'Если идёте со стороны набережной — поверните на ул. Горького, кофейня будет слева через 100 метров.',
+  phone: '+7 (988) 123-45-67',
+  email: 'hello@magiccoffee.ru',
+  hours: {
+    weekdays: '8:00–21:00',
+    weekends: '9:00–22:00',
+  },
+  seasonNote: 'В летний сезон (июнь–август) работаем до 23:00',
+  features: [
+    'Можно прийти с детьми',
+    'Удобно зайти одному',
+    'Подходит для спокойных встреч',
+    'Можно посидеть с ноутбуком',
+    'Можно просто взять кофе с собой',
+  ],
+  mapLinks: {
+    yandex: 'https://yandex.ru/maps/-/CDQJ4Q~g',
+    google: 'https://maps.google.com/?q=Анапа+ул+Горького+42',
+    '2gis': 'https://2gis.ru/anapa',
+  },
+  delivery: {
+    yandex: 'https://eda.yandex.ru',
+    deliveryClub: 'https://www.delivery-club.ru',
+    ownDelivery: {
+      available: true,
+      areas: 'центр Анапы и ближайшие районы',
+      time: '30–50 минут',
+      minOrder: 500,
+    },
+  },
+};
