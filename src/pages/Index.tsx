@@ -13,7 +13,7 @@ const Index: React.FC = () => {
     {
       icon: Coffee,
       title: 'Меню',
-      description: 'Кофе, напитки, вафли и десерты',
+      description: 'Кофе, напитки, вафли',
       link: '/menu',
     },
     {
@@ -48,7 +48,7 @@ const Index: React.FC = () => {
             <img 
               src={logo} 
               alt={cafeInfo.name}
-              className="h-32 md:h-40 w-auto mx-auto mb-6"
+              className="h-36 md:h-48 w-auto mx-auto mb-6 animate-fade-in-up"
             />
             <p className="font-body text-lg text-muted-foreground">
               Кофейня в {cafeInfo.city}
@@ -57,21 +57,25 @@ const Index: React.FC = () => {
 
           {/* Quick info */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12">
-            <Card className="bg-card/80 backdrop-blur-sm border-border">
+            <Card className="bg-card/90 backdrop-blur-sm border-border card-hover">
               <CardContent className="p-4 flex items-center gap-4">
-                <Clock className="w-6 h-6 text-primary" />
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Clock className="w-5 h-5 text-primary" />
+                </div>
                 <div className="font-body text-sm">
-                  <p className="text-foreground">Сегодня: {cafeInfo.hours.weekdays}</p>
+                  <p className="text-foreground font-medium">Сегодня: {cafeInfo.hours.weekdays}</p>
                   <p className="text-muted-foreground">Вых: {cafeInfo.hours.weekends}</p>
                 </div>
               </CardContent>
             </Card>
             
-            <Card className="bg-card/80 backdrop-blur-sm border-border">
+            <Card className="bg-card/90 backdrop-blur-sm border-border card-hover">
               <CardContent className="p-4 flex items-center gap-4">
-                <MapPin className="w-6 h-6 text-primary" />
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <MapPin className="w-5 h-5 text-primary" />
+                </div>
                 <div className="font-body text-sm">
-                  <p className="text-foreground">{cafeInfo.address}</p>
+                  <p className="text-foreground font-medium">{cafeInfo.address}</p>
                   <p className="text-muted-foreground">{cafeInfo.district}</p>
                 </div>
               </CardContent>
@@ -82,9 +86,11 @@ const Index: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
             {quickLinks.map((item) => (
               <Link key={item.title} to={item.link}>
-                <Card className="bg-card/80 backdrop-blur-sm border-border h-full card-hover">
-                  <CardContent className="p-4 text-center">
-                    <item.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+                <Card className="bg-card/90 backdrop-blur-sm border-border h-full card-hover">
+                  <CardContent className="p-5 text-center">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                      <item.icon className="w-6 h-6 text-primary" />
+                    </div>
                     <h3 className="font-display text-lg font-semibold text-foreground mb-1">
                       {item.title}
                     </h3>
@@ -121,9 +127,9 @@ const Index: React.FC = () => {
                 Меню
               </h2>
               <p className="font-body text-muted-foreground mb-4">
-                Классический кофе на качественном зерне. Гонконгские вафли. Сезонные напитки.
+                Классический кофе на качественном зерне. Гонконгские вафли. Авторские чаи.
               </p>
-              <Button variant="ghost" asChild className="font-body p-0 h-auto text-primary">
+              <Button variant="ghost" asChild className="font-body p-0 h-auto text-primary hover:text-accent">
                 <Link to="/menu" className="flex items-center gap-2">
                   Смотреть меню <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -138,7 +144,7 @@ const Index: React.FC = () => {
               <p className="font-body text-muted-foreground mb-4">
                 Камерные мастер-классы, книжный клуб, игра «Что? Где? Когда?».
               </p>
-              <Button variant="ghost" asChild className="font-body p-0 h-auto text-primary">
+              <Button variant="ghost" asChild className="font-body p-0 h-auto text-primary hover:text-accent">
                 <Link to="/events" className="flex items-center gap-2">
                   Расписание <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -153,7 +159,7 @@ const Index: React.FC = () => {
               <p className="font-body text-muted-foreground mb-4">
                 Центр Анапы. Удобно зайти по дороге. Рядом остановка.
               </p>
-              <Button variant="ghost" asChild className="font-body p-0 h-auto text-primary">
+              <Button variant="ghost" asChild className="font-body p-0 h-auto text-primary hover:text-accent">
                 <Link to="/contacts" className="flex items-center gap-2">
                   Адрес и карта <ArrowRight className="w-4 h-4" />
                 </Link>
