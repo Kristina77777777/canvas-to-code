@@ -3,10 +3,38 @@ import { Link } from 'react-router-dom';
 import { MapPin, Clock, Coffee, Calendar, Truck, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import logo from '@/assets/logo.png';
 import { cafeInfo } from '@/data/menuData';
+
+// Фотографии интерьера для карусели
+import interiorBar from '@/assets/interior-bar.jpg';
+import interiorSeating from '@/assets/interior-seating.jpg';
+import interiorWindow from '@/assets/interior-window.jpg';
+import interiorLounge from '@/assets/interior-lounge.jpg';
+import interiorEntrance from '@/assets/interior-entrance.jpg';
+import interiorMain from '@/assets/interior-main.jpg';
+import interiorPlants from '@/assets/interior-plants.jpg';
+import interiorSofa from '@/assets/interior-sofa.jpg';
+
+const carouselImages = [
+  { src: interiorMain, alt: 'Основной зал' },
+  { src: interiorSeating, alt: 'Зона отдыха' },
+  { src: interiorEntrance, alt: 'Вид с улицы' },
+  { src: interiorLounge, alt: 'Уютный уголок' },
+  { src: interiorBar, alt: 'Барная стойка' },
+  { src: interiorWindow, alt: 'У окна' },
+  { src: interiorPlants, alt: 'Зелёный уголок' },
+  { src: interiorSofa, alt: 'Диванная зона' },
+];
 
 const Index: React.FC = () => {
   const quickLinks = [
@@ -114,6 +142,41 @@ const Index: React.FC = () => {
               <p>Можно посидеть недолго.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Photo carousel */}
+      <section className="py-16 bg-secondary/30">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground text-center mb-8">
+            Как у нас
+          </h2>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {carouselImages.map((image, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                  <div className="overflow-hidden rounded-lg shadow-md">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-64 md:h-80 object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <p className="font-body text-sm text-muted-foreground text-center mt-2">
+                    {image.alt}
+                  </p>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex -left-12" />
+            <CarouselNext className="hidden md:flex -right-12" />
+          </Carousel>
         </div>
       </section>
 
