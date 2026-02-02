@@ -19,8 +19,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import logo from '@/assets/logo.png';
 import { cafeInfo } from '@/data/menuData';
+import exteriorSign from '@/assets/exterior-sign.jpg';
 
 // Фотографии интерьера
 import interiorEntrance from '@/assets/interior-entrance.jpg';
@@ -69,20 +69,19 @@ const Index: React.FC = () => {
       <section className="pt-24 pb-12 gradient-hero">
         <div className="container mx-auto px-4">
           <motion.div 
-            className="text-center mb-8"
+            className="mb-8"
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            <img 
-              src={logo} 
-              alt={cafeInfo.name}
-              className="h-28 md:h-36 w-auto mx-auto mb-4"
-            />
-            <p className="font-body text-muted-foreground">
-              Кофейня в {cafeInfo.city}
-            </p>
+            <div className="overflow-hidden rounded-2xl shadow-lg max-w-3xl mx-auto">
+              <img 
+                src={exteriorSign} 
+                alt="Вывеска кофейни"
+                className="w-full h-48 md:h-72 object-cover"
+              />
+            </div>
           </motion.div>
 
           {/* Краткое описание */}
