@@ -75,11 +75,11 @@ const Index: React.FC = () => {
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            <Link to="/menu" className="block overflow-hidden rounded-2xl shadow-xl max-w-2xl mx-auto hover:shadow-2xl transition-shadow duration-300">
+            <Link to="/menu" className="block max-w-md mx-auto hover:scale-105 transition-transform duration-300">
               <img 
                 src={heroWaffles} 
                 alt="Гонконгские вафли и кофе"
-                className="w-full h-64 md:h-80 object-cover object-bottom hover:scale-105 transition-transform duration-300"
+                className="w-full h-auto rounded-2xl shadow-xl"
               />
             </Link>
           </motion.div>
