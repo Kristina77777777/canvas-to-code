@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '@/assets/logo.png';
+import { cafeInfo } from '@/data/menuData';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,6 +23,9 @@ const Navigation: React.FC = () => {
     { href: '/menu', label: 'Меню' },
     { href: '/events', label: 'События' },
   ];
+
+  const phoneNumber = cafeInfo.phone.replace(/[^\d+]/g, '');
+  const telegramLink = cafeInfo.social?.telegram;
 
   const isActive = (href: string) => location.pathname === href;
 
@@ -57,6 +61,28 @@ const Navigation: React.FC = () => {
                 {link.label}
               </Link>
             ))}
+            
+            {/* Action buttons */}
+            <div className="flex items-center gap-2 ml-2">
+              <a
+                href={`tel:${phoneNumber}`}
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-body"
+              >
+                <Phone className="w-4 h-4" />
+                Позвонить
+              </a>
+              {telegramLink && (
+                <a
+                  href={telegramLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary/60 text-foreground hover:bg-primary/20 hover:text-primary transition-all"
+                  aria-label="Telegram"
+                >
+                  <Send className="w-5 h-5" />
+                </a>
+              )}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,6 +115,28 @@ const Navigation: React.FC = () => {
                   {link.label}
                 </Link>
               ))}
+              
+              {/* Mobile action buttons */}
+              <div className="flex gap-2 mt-2">
+                <a
+                  href={`tel:${phoneNumber}`}
+                  className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-primary text-primary-foreground font-body"
+                >
+                  <Phone className="w-4 h-4" />
+                  Позвонить
+                </a>
+                {telegramLink && (
+                  <a
+                    href={telegramLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-12 h-12 rounded-full bg-secondary/60 text-foreground"
+                    aria-label="Telegram"
+                  >
+                    <Send className="w-5 h-5" />
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         )}
