@@ -66,7 +66,7 @@ const Index: React.FC = () => {
       <Navigation />
       
       {/* Hero section - Location First */}
-      <section className="relative pt-24 pb-12 min-h-[60vh] md:min-h-[50vh] overflow-hidden">
+      <section className="relative pt-24 pb-0 min-h-[70vh] md:min-h-[60vh] overflow-hidden flex flex-col">
         {/* Background image with blur */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
@@ -75,11 +75,11 @@ const Index: React.FC = () => {
           <div className="absolute inset-0 bg-espresso/40" />
         </div>
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 flex-1 flex flex-col justify-end pb-6">
 
           {/* Краткое описание */}
           <motion.div 
-            className="max-w-2xl mx-auto text-center mb-10"
+            className="max-w-2xl mb-6"
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
@@ -93,7 +93,7 @@ const Index: React.FC = () => {
 
           {/* Часы работы и отметка о детях */}
           <motion.div 
-            className="flex flex-wrap justify-center gap-4 mb-10"
+            className="flex flex-wrap gap-3"
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
