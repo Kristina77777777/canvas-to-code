@@ -72,7 +72,7 @@ const Index: React.FC = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroWaffles})` }}
         >
-          <div className="absolute inset-0 backdrop-blur-[2px] bg-background/30" />
+          <div className="absolute inset-0 bg-espresso/40" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -85,7 +85,7 @@ const Index: React.FC = () => {
             variants={fadeInUp}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="font-body text-foreground leading-relaxed">
+            <p className="font-body text-cream leading-relaxed text-lg font-medium drop-shadow-md">
               Здесь готовим кофе из свежей обжарки, гонконгские вафли и сезонные напитки. 
               Можно посидеть с книгой, поработать, прийти с детьми или попасть на мастер-класс.
             </p>
