@@ -62,7 +62,7 @@ const Index: React.FC = () => {
     { text: 'Сезонные напитки', link: '/menu' },
     { text: 'Мастер-классы', link: '/events' },
     { text: 'Встречи по интересам', link: '/events' },
-    { text: '«Что? Где? Когда?»', link: '/events' },
+    { text: 'Интеллектуальные игры', link: '/events' },
   ];
 
   return (

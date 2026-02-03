@@ -147,10 +147,10 @@ const EventsPage: React.FC = () => {
 
             <div>
               <h2 className="font-display text-2xl font-semibold text-foreground mb-3">
-                Мини-игра «Что? Где? Когда?»
+                Интеллектуальные игры
               </h2>
               <div className="font-body text-muted-foreground space-y-2">
-                <p>Регулярно проходит мини-игра «Что? Где? Когда?».</p>
+                <p>Регулярно проходят интеллектуальные игры.</p>
                 <p>Формат любительский. Без соревнований и призов.</p>
                 <p>Подходит для тех, кто любит думать и обсуждать.</p>
               </div>
