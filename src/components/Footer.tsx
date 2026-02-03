@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import { cafeInfo } from '@/data/menuData';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-foreground text-primary-foreground py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {/* Navigation */}
           <div>
             <h3 className="font-display text-lg font-semibold mb-4">Навигация</h3>
@@ -56,6 +56,27 @@ const Footer: React.FC = () => {
                   <p>{cafeInfo.address}</p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Feedback / Social */}
+          <div>
+            <h3 className="font-display text-lg font-semibold mb-4">Написать нам</h3>
+            <div className="space-y-3 font-body text-sm">
+              {cafeInfo.social?.telegram && (
+                <a 
+                  href={cafeInfo.social.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  Telegram
+                </a>
+              )}
+              <p className="opacity-60 text-xs mt-2">
+                Заказ доставки, запись на мастер-класс
+              </p>
             </div>
           </div>
         </div>
