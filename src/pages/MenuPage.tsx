@@ -174,7 +174,7 @@ const MenuPage: React.FC = () => {
               {/* Contact for delivery */}
               <div className="font-body text-muted-foreground">
                 <p className="mb-3">
-                  Если вы не нашли нас в агрегаторе — напишите или позвоните, подскажем.
+                  Если вы не нашли нас в сервисах доставки — напишите или позвоните, подскажем.
                 </p>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-primary" />
