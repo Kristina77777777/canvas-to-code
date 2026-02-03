@@ -22,10 +22,11 @@ import Footer from '@/components/Footer';
 import { cafeInfo } from '@/data/menuData';
 import heroWaffles from '@/assets/hero-waffles.jpg';
 
-// Фотографии интерьера
+// Фотографии интерьера и экстерьера
 import interiorEntrance from '@/assets/interior-entrance.jpg';
 import interiorMain from '@/assets/interior-main.jpg';
 import interiorWindow from '@/assets/interior-window.jpg';
+import exteriorEntrance from '@/assets/exterior-entrance.jpg';
 
 // Анимации
 const fadeInUp = {
@@ -238,8 +239,8 @@ const Index: React.FC = () => {
               >
                 <motion.div variants={fadeInUp} className="overflow-hidden rounded-lg shadow-md">
                   <img 
-                    src={interiorEntrance} 
-                    alt="Вид с улицы на кофейню"
+                    src={exteriorEntrance} 
+                    alt="Вход в кофейню Magic"
                     className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
                   />
                   <p className="font-body text-xs text-muted-foreground text-center py-2 bg-card">
