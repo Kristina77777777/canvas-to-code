@@ -182,7 +182,7 @@ export const cafeInfo = {
   mapLinks: {
     yandex: 'https://yandex.ru/maps/org/49943668381',
     google: 'https://maps.google.com/?q=Анапа+ул+Горького+42',
-    '2gis': 'https://2gis.ru/anapa',
+    '2gis': 'https://account.2gis.com/orgs/70000001110098904',
   },
   delivery: {
     yandex: 'https://eda.yandex.ru',
