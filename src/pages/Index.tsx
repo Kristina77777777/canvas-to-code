@@ -66,23 +66,16 @@ const Index: React.FC = () => {
       <Navigation />
       
       {/* Hero section - Location First */}
-      <section className="pt-24 pb-12 gradient-hero">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            className="mb-8"
-            initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
-            transition={{ duration: 0.6 }}
-          >
-            <Link to="/menu" className="block max-w-md mx-auto hover:scale-105 transition-transform duration-300">
-              <img 
-                src={heroWaffles} 
-                alt="Гонконгские вафли и кофе"
-                className="w-full h-auto rounded-2xl shadow-xl"
-              />
-            </Link>
-          </motion.div>
+      <section className="relative pt-24 pb-12 min-h-[60vh] md:min-h-[50vh] overflow-hidden">
+        {/* Background image with blur */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroWaffles})` }}
+        >
+          <div className="absolute inset-0 backdrop-blur-sm bg-background/60" />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
 
           {/* Краткое описание */}
           <motion.div 
