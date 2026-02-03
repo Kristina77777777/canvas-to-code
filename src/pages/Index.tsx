@@ -72,7 +72,7 @@ const Index: React.FC = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroWaffles})` }}
         >
-          <div className="absolute inset-0 backdrop-blur-sm bg-background/60" />
+          <div className="absolute inset-0 backdrop-blur-[2px] bg-background/30" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
