@@ -163,6 +163,9 @@ export const cafeInfo = {
   directions: 'Если идёте от улицы Чехова — поверните на ул. Гребенскую в сторону набережной, недалеко от школы № 4.',
   phone: '+7(988) 318-53-98',
   email: 'hello@magiccoffee.ru',
+  social: {
+    telegram: 'https://t.me/redkiivid1',
+  },
   hours: {
     weekdays: '9:00–21:00',
     weekends: '9:00–21:00',
