@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Send } from 'lucide-react';
+import { Menu, X, Phone, Send, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '@/assets/logo.png';
@@ -26,6 +26,7 @@ const Navigation: React.FC = () => {
 
   const phoneNumber = cafeInfo.phone.replace(/[^\d+]/g, '');
   const telegramLink = cafeInfo.social?.telegram;
+  const instagramLink = cafeInfo.social?.instagram;
 
   const isActive = (href: string) => location.pathname === href;
 
@@ -85,6 +86,17 @@ const Navigation: React.FC = () => {
                   <Send className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                 </a>
               )}
+              {instagramLink && (
+                <a
+                  href={instagramLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white shadow-md hover:shadow-lg hover:scale-110 active:scale-95 transition-all duration-200"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
+                </a>
+              )}
             </div>
           </div>
 
@@ -140,6 +152,17 @@ const Navigation: React.FC = () => {
                     aria-label="Telegram"
                   >
                     <Send className="w-6 h-6" />
+                  </a>
+                )}
+                {instagramLink && (
+                  <a
+                    href={instagramLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white shadow-md active:scale-95 transition-all"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="w-6 h-6" />
                   </a>
                 )}
               </div>
