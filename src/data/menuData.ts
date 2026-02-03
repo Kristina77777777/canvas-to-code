@@ -180,7 +180,7 @@ export const cafeInfo = {
     'Можно просто взять кофе с собой',
   ],
   mapLinks: {
-    yandex: 'https://yandex.ru/maps/-/CDQJ4Q~g',
+    yandex: 'https://yandex.ru/maps/org/49943668381',
     google: 'https://maps.google.com/?q=Анапа+ул+Горького+42',
     '2gis': 'https://2gis.ru/anapa',
   },
