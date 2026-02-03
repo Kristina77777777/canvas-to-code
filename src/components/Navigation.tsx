@@ -19,6 +19,7 @@ const Navigation: React.FC = () => {
   }, []);
 
   const navLinks = [
+    { href: '/', label: 'Главная' },
     { href: '/contacts', label: 'Контакты' },
     { href: '/menu', label: 'Меню' },
     { href: '/events', label: 'События' },
