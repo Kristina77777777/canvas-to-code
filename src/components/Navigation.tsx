@@ -62,13 +62,16 @@ const Navigation: React.FC = () => {
               </Link>
             ))}
             
+            {/* Separator */}
+            <div className="w-px h-8 bg-foreground/20 mx-2" />
+            
             {/* Action buttons */}
-            <div className="flex items-center gap-2 ml-2">
+            <div className="flex items-center gap-3">
               <a
                 href={`tel:${phoneNumber}`}
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-body"
+                className="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-primary/80 text-primary-foreground font-body font-medium shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4 group-hover:animate-[pulse_0.5s_ease-in-out]" />
                 Позвонить
               </a>
               {telegramLink && (
@@ -76,10 +79,10 @@ const Navigation: React.FC = () => {
                   href={telegramLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary/60 text-foreground hover:bg-primary/20 hover:text-primary transition-all"
+                  className="group flex items-center justify-center w-11 h-11 rounded-full bg-[#229ED9] text-white shadow-md hover:shadow-lg hover:scale-110 active:scale-95 transition-all duration-200"
                   aria-label="Telegram"
                 >
-                  <Send className="w-5 h-5" />
+                  <Send className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                 </a>
               )}
             </div>
@@ -116,11 +119,14 @@ const Navigation: React.FC = () => {
                 </Link>
               ))}
               
+              {/* Separator */}
+              <div className="h-px w-full bg-foreground/10 my-2" />
+              
               {/* Mobile action buttons */}
-              <div className="flex gap-2 mt-2">
+              <div className="flex gap-3">
                 <a
                   href={`tel:${phoneNumber}`}
-                  className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-primary text-primary-foreground font-body"
+                  className="flex-1 flex items-center justify-center gap-2 py-3.5 px-4 rounded-full bg-gradient-to-r from-primary to-primary/80 text-primary-foreground font-body font-medium shadow-md active:scale-95 transition-all"
                 >
                   <Phone className="w-4 h-4" />
                   Позвонить
@@ -130,10 +136,10 @@ const Navigation: React.FC = () => {
                     href={telegramLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-12 h-12 rounded-full bg-secondary/60 text-foreground"
+                    className="flex items-center justify-center w-14 h-14 rounded-full bg-[#229ED9] text-white shadow-md active:scale-95 transition-all"
                     aria-label="Telegram"
                   >
-                    <Send className="w-5 h-5" />
+                    <Send className="w-6 h-6" />
                   </a>
                 )}
               </div>
