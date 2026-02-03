@@ -77,6 +77,23 @@ const Index: React.FC = () => {
         
         <div className="container mx-auto px-4 relative z-10 flex-1 flex flex-col justify-end pb-6">
 
+          {/* Название и локация */}
+          <motion.div 
+            className="mb-4"
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream drop-shadow-lg mb-2">
+              Magic Coffee
+            </h1>
+            <p className="font-body text-cream/90 text-lg md:text-xl drop-shadow-md flex items-center gap-2">
+              <MapPin className="w-5 h-5" />
+              Кофейня в Анапе
+            </p>
+          </motion.div>
+
           {/* Краткое описание */}
           <motion.div 
             className="max-w-2xl mb-6"
@@ -85,7 +102,7 @@ const Index: React.FC = () => {
             variants={fadeInUp}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="font-body text-cream leading-relaxed text-lg font-medium drop-shadow-md">
+            <p className="font-body text-cream/80 leading-relaxed text-base md:text-lg font-medium drop-shadow-md">
               Здесь готовим кофе из свежей обжарки, гонконгские вафли и сезонные напитки. 
               Можно посидеть с книгой, поработать, прийти с детьми или попасть на мастер-класс.
             </p>
