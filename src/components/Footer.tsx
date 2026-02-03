@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Send } from 'lucide-react';
 import { cafeInfo } from '@/data/menuData';
 
 const Footer: React.FC = () => {
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <Send className="w-4 h-4" />
                   Telegram
                 </a>
               )}
