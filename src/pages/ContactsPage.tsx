@@ -33,7 +33,7 @@ const ContactsPage: React.FC = () => {
     { label: 'Авторские чаи', link: '/menu' },
     { label: 'Мастер-классы', link: '/events' },
     { label: 'Встречи по интересам', link: '/events' },
-    { label: 'Мини-игра «Что? Где? Когда?»', link: '/events' },
+    { label: 'Интеллектуальные игры', link: '/events' },
   ];
 
   return (

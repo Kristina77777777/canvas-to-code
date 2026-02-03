@@ -112,7 +112,7 @@ export const upcomingEvents: Event[] = [
   },
   {
     id: 'wwg',
-    title: 'Что? Где? Когда?',
+    title: 'Интеллектуальные игры',
     date: '22 февраля',
     time: '19:00',
     format: 'Игра',
