@@ -91,44 +91,34 @@ export interface Event {
 
 export const upcomingEvents: Event[] = [
   {
-    id: 'latte-art',
-    title: 'Мастер-класс по латте-арту',
-    date: '15 февраля',
-    time: '14:00',
+    id: 'craft-workshop',
+    title: 'Мастер-класс по поделкам',
+    date: 'Каждую субботу',
+    time: '16:00',
     format: 'Мастер-класс',
-    audience: 'Для всех',
+    audience: 'Дети с 3 лет и взрослые',
     needsRegistration: true,
-    description: 'Научитесь рисовать на кофе. Материалы включены.',
+    description: 'Интересные поделки из различных материалов на выбор участника. Тема может меняться по выбору преподавателя.',
   },
   {
     id: 'book-club',
     title: 'Книжный клуб',
-    date: '18 февраля',
-    time: '18:00',
+    date: 'Каждое воскресенье',
+    time: '17:00',
     format: 'Встреча',
     audience: 'Любители чтения',
-    needsRegistration: false,
+    needsRegistration: true,
     description: 'Обсуждаем современную прозу.',
   },
   {
     id: 'wwg',
     title: 'Интеллектуальные игры',
-    date: '22 февраля',
-    time: '19:00',
+    date: 'Каждое воскресенье',
+    time: '17:00',
     format: 'Игра',
     audience: 'Для всех',
     needsRegistration: true,
     description: 'Любительская игра без призов. Просто для удовольствия.',
-  },
-  {
-    id: 'watercolor',
-    title: 'Акварель для начинающих',
-    date: '25 февраля',
-    time: '15:00',
-    format: 'Мастер-класс',
-    audience: 'Для всех',
-    needsRegistration: true,
-    description: 'Рисуем простой пейзаж. Материалы включены.',
   },
 ];
 
@@ -140,6 +130,12 @@ export interface PastEvent {
 }
 
 export const pastEvents: PastEvent[] = [
+  {
+    id: 'past-latte-art',
+    title: 'Мастер-класс по латте-арту',
+    date: '15 февраля 2026',
+    description: 'Научились рисовать на кофе. 8 участников.',
+  },
   {
     id: 'past-1',
     title: 'Встреча книжного клуба',
