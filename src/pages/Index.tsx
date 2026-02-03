@@ -29,6 +29,7 @@ import interiorWindow from '@/assets/interior-window.jpg';
 import exteriorEntrance from '@/assets/exterior-entrance.jpg';
 import interiorCounter from '@/assets/interior-counter.jpg';
 import interiorHall from '@/assets/interior-hall.jpg';
+import interiorSeatingCozy from '@/assets/interior-seating-cozy.jpg';
 
 // Анимации
 const fadeInUp = {
@@ -288,12 +289,12 @@ const Index: React.FC = () => {
                 variants={fadeInUp}
               >
                 <img 
-                  src={interiorHall} 
-                  alt="Основной зал кофейни"
+                  src={interiorSeatingCozy} 
+                  alt="Уютная зона отдыха"
                   className="w-full h-40 md:h-56 object-cover hover:scale-105 transition-transform duration-300"
                 />
                 <p className="font-body text-xs text-muted-foreground text-center py-2 bg-card">
-                  Основной зал
+                  Уютная зона
                 </p>
               </motion.div>
             </div>
