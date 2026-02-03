@@ -3,7 +3,6 @@ import { Calendar, Clock, Users, Check, X } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import EventRegistrationForm from '@/components/EventRegistrationForm';
 import { upcomingEvents, pastEvents } from '@/data/menuData';
 
 const EventsPage: React.FC = () => {
@@ -156,11 +155,6 @@ const EventsPage: React.FC = () => {
                 <p>Подходит для тех, кто любит думать и обсуждать.</p>
               </div>
             </div>
-          </section>
-
-          {/* Registration form */}
-          <section className="mb-12">
-            <EventRegistrationForm />
           </section>
 
           {/* Past events */}

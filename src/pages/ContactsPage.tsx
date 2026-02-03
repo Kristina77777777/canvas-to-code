@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import ContactForm from '@/components/ContactForm';
 import { cafeInfo } from '@/data/menuData';
 
 // Фотографии интерьера
@@ -301,14 +300,6 @@ const ContactsPage: React.FC = () => {
                 </div>
               </CardContent>
             </Card>
-          </section>
-
-          {/* Contact form */}
-          <section className="mb-12">
-            <h2 className="font-display text-2xl font-semibold text-foreground mb-4">
-              Напишите нам
-            </h2>
-            <ContactForm />
           </section>
         </div>
       </div>
