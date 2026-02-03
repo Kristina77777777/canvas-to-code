@@ -52,10 +52,10 @@ const Navigation: React.FC = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`font-body px-4 py-2 rounded-full transition-all duration-200 ${
+                className={`font-body px-4 py-2 rounded-lg transition-all duration-200 ${
                   isActive(link.href) 
-                    ? 'bg-primary text-primary-foreground shadow-md' 
-                    : 'bg-secondary/60 text-foreground hover:bg-primary/20 hover:text-primary'
+                    ? 'bg-card/90 backdrop-blur-sm border border-border text-foreground shadow-sm' 
+                    : 'bg-card/90 backdrop-blur-sm border border-border text-foreground hover:bg-card hover:shadow-md'
                 }`}
               >
                 {link.label}
@@ -109,10 +109,10 @@ const Navigation: React.FC = () => {
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block w-full text-center py-3 px-4 rounded-full font-body transition-all ${
+                  className={`block w-full text-center py-3 px-4 rounded-lg font-body transition-all ${
                     isActive(link.href) 
-                      ? 'bg-primary text-primary-foreground shadow-md' 
-                      : 'bg-secondary/60 text-foreground hover:bg-primary/20'
+                      ? 'bg-card/90 backdrop-blur-sm border border-border text-foreground shadow-sm' 
+                      : 'bg-card/90 backdrop-blur-sm border border-border text-foreground hover:bg-card'
                   }`}
                 >
                   {link.label}
