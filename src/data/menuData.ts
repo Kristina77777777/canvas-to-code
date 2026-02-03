@@ -165,6 +165,7 @@ export const cafeInfo = {
   email: 'hello@magiccoffee.ru',
   social: {
     telegram: 'https://t.me/redkiivid1',
+    instagram: 'https://www.instagram.com/magic.anapa_?igsh=MXZxdG5pYnNyZ3Z2cg%3D%3D&utm_source=qr',
   },
   hours: {
     weekdays: '9:00–21:00',
