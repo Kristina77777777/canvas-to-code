@@ -10,7 +10,8 @@ import { cafeInfo } from '@/data/menuData';
 // Фотографии интерьера
 import interiorBar from '@/assets/interior-bar.jpg';
 import interiorSeating from '@/assets/interior-seating.jpg';
-import interiorWindow from '@/assets/interior-window.jpg';
+import exteriorEntrance from '@/assets/exterior-entrance.jpg';
+import exteriorMural from '@/assets/exterior-mural.jpg';
 import interiorLounge from '@/assets/interior-lounge.jpg';
 import interiorEntrance from '@/assets/interior-entrance.jpg';
 import interiorMain from '@/assets/interior-main.jpg';
@@ -118,13 +119,13 @@ const ContactsPage: React.FC = () => {
                 className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow aspect-square"
               />
               <img 
-                src={interiorWindow} 
-                alt="Вид с улицы" 
+                src={exteriorEntrance} 
+                alt="Вход в кофейню с улицы" 
                 className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow aspect-square"
               />
               <img 
-                src={interiorEntrance} 
-                alt="Вход в кофейню" 
+                src={exteriorMural} 
+                alt="Фасад с муралом" 
                 className="w-full h-full object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow aspect-square"
               />
             </div>
